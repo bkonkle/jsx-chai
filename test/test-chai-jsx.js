@@ -82,19 +82,35 @@ describe('chai-jsx', () => {
 
   })
 
-  describe('expect().to.conatinJsx()', () => {
+  describe('expect().to.containJsx()', () => {
 
-    it('should not throw an error if the subject contains the given JSX')
+    it('should not throw an error if the subject contains the given JSX', () => {
+      expect(
+        () => expect(<div><SonicScrewdriver/></div>).to.containJsx(<SonicScrewdriver/>)
+      ).to.not.throw()
+    })
 
-    it('should throw an error if the subject does not contain the given JSX')
+    it('should throw an error if the subject does not contain the given JSX', () => {
+      expect(
+        () => expect(<div><SonicScrewdriver/></div>).to.containJsx(<SonicScrewdriver active={true}/>)
+      ).to.throw(AssertionError)
+    })
 
   })
 
-  describe('expect().to.not.conatinJsx()', () => {
+  describe('expect().to.not.containJsx()', () => {
 
-    it('should throw an error if the subject contains the given JSX')
+    it('should throw an error if the subject contains the given JSX', () => {
+      expect(
+        () => expect(<div><SonicScrewdriver/></div>).to.not.containJsx(<SonicScrewdriver/>)
+      ).to.throw(AssertionError)
+    })
 
-    it('should not throw an error if the subject does not contain the given JSX')
+    it('should not throw an error if the subject does not contain the given JSX', () => {
+      expect(
+        () => expect(<div><SonicScrewdriver/></div>).to.not.containJsx(<SonicScrewdriver active={true}/>)
+      ).to.not.throw()
+    })
 
   })
 

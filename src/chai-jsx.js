@@ -1,7 +1,7 @@
 import {isElement} from 'react-addons-test-utils';
 import reactElementToJSXString from 'react-element-to-jsx-string'
 
-export default function chaiJsx({Assertion}) {
+export default function chaiJsx({Assertion}, {inspect}) {
 
   Assertion.addProperty('jsx', function() {
     this.assert(
@@ -28,7 +28,18 @@ export default function chaiJsx({Assertion}) {
   })
 
   Assertion.addMethod('containJsx', function(jsx) {
+    new Assertion(this._obj).to.be.jsx
 
+    const expected = reactElementToJSXString(jsx)
+    const actual = reactElementToJSXString(this._obj)
+
+    this.assert(
+      ~actual.indexOf(expected),
+      `expected #{act} to contain ${inspect(expected)}`,
+      `expected #{act} to not contain ${inspect(expected)}`,
+      expected,
+      actual
+    )
   })
 
 }
