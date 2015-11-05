@@ -1,0 +1,49 @@
+{
+  "name": "chai-jsx",
+  "version": "0.1.0",
+  "description": "JSX assertions for Chai using Algolia's react-element-to-jsx-string",
+  "main": "lib/chai-jsx.js",
+  "scripts": {
+    "test": "istanbul cover _mocha",
+    "watch": "babel-node $(which gulp) watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecliptic/chai-jsx.git"
+  },
+  "keywords": [
+    "chai",
+    "testing",
+    "assertions",
+    "jsx",
+    "react"
+  ],
+  "author": "Brandon Konkle <brandon@konkle.us>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ecliptic/chai-jsx/issues"
+  },
+  "homepage": "https://github.com/ecliptic/chai-jsx#readme",
+  "peerDependencies": {
+    "chai": "^3.4.0",
+    "react": "^0.14.2"
+  },
+  "dependencies": {
+    "react-addons-test-utils": "^0.14.2",
+    "react-element-to-jsx-string": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel": "^6.0.15",
+    "babel-eslint": "^4.1.4",
+    "chai": "^3.4.0",
+    "eslint": "^1.8.0",
+    "eslint-config-ecliptic": "^1.2.1",
+    "eslint-plugin-react": "^3.7.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.0.0",
+    "gulp-spawn-mocha": "^2.2.1",
+    "gulp-util": "^3.0.7",
+    "istanbul": "^0.4.0",
+    "mocha": "^2.3.3"
+  }
+}
