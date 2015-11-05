@@ -1,3 +1,1 @@
---recursive
---reporter nyan
 --compilers js:babel-core/register

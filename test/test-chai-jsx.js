@@ -4,17 +4,7 @@ import React from 'react'
 
 chai.use(chaiJsx)
 
-class SonicScrewdriver extends React.Component {
-
-  static propTypes = {
-    name: React.PropTypes.string,
-  }
-
-  render() {
-    return <div>Hi! {this.props.name}</div>
-  }
-
-}
+class SonicScrewdriver extends React.Component {}
 
 describe('chai-jsx', () => {
 
