@@ -18,7 +18,39 @@ class SonicScrewdriver extends React.Component {
 
 describe('chai-jsx', () => {
 
-  describe('to.equalJsx()', () => {
+  describe('expect().to.be.jsx', () => {
+
+    it('should not throw an error if the object is a JSX element', () => {
+      expect(
+        () => expect(<SonicScrewdriver/>).to.be.jsx
+      ).to.not.throw()
+    })
+
+    it('should throw an error if the object is not a JSX element', () => {
+      expect(
+        () => expect('SonicScrewdriver').to.be.jsx
+      ).to.throw(AssertionError)
+    })
+
+  })
+
+  describe('expect().to.not.be.jsx', () => {
+
+    it('should throw an error if the object is a JSX element', () => {
+      expect(
+        () => expect(<SonicScrewdriver/>).to.not.be.jsx
+      ).to.throw(AssertionError)
+    })
+
+    it('should not throw an error if the object is not a JSX element', () => {
+      expect(
+        () => expect('SonicScrewdriver').to.not.be.jsx
+      ).to.not.throw()
+    })
+
+  })
+
+  describe('expect().to.equalJsx()', () => {
 
     it('should not throw an error if the JSX is equal', () => {
       expect(
@@ -34,7 +66,7 @@ describe('chai-jsx', () => {
 
   })
 
-  describe('to.not.equalJsx()', () => {
+  describe('expect().to.not.equalJsx()', () => {
 
     it('should throw an error if the JSX is equal', () => {
       expect(
@@ -50,7 +82,7 @@ describe('chai-jsx', () => {
 
   })
 
-  describe('to.conatinJsx()', () => {
+  describe('expect().to.conatinJsx()', () => {
 
     it('should not throw an error if the subject contains the given JSX')
 
@@ -58,27 +90,11 @@ describe('chai-jsx', () => {
 
   })
 
-  describe('to.not.conatinJsx()', () => {
+  describe('expect().to.not.conatinJsx()', () => {
 
     it('should throw an error if the subject contains the given JSX')
 
     it('should not throw an error if the subject does not contain the given JSX')
-
-  })
-
-  describe('to.be.jsx', () => {
-
-    it('should not throw an error if the object is a JSX element')
-
-    it('should throw an error if the object is not a JSX element')
-
-  })
-
-  describe('to.not.be.jsx', () => {
-
-    it('should throw an error if the object is a JSX element')
-
-    it('should not throw an error if the object is not a JSX element')
 
   })
 
