@@ -54,9 +54,17 @@ describe('chai-jsx', () => {
       ).to.throw(AssertionError)
     })
 
-    it('should allow normal expect().to.equal() calls to work')
+    it('should allow normal expect().to.equal() calls to work', () => {
+      expect(
+        () => expect('TARDIS').to.equal('TARDIS')
+      ).to.not.throw()
+    })
 
-    it('should reject objects that are not JSX elements')
+    it('should reject objects that are not JSX elements', () => {
+      expect(
+        () => expect('TARDIS').jsx.to.equal(<SonicScrewdriver/>)
+      ).to.throw(AssertionError)
+    })
 
   })
 
@@ -90,9 +98,17 @@ describe('chai-jsx', () => {
       ).to.throw(AssertionError)
     })
 
-    it('should allow normal expect().to.include() calls to work')
+    it('should allow normal expect().to.include() calls to work', () => {
+      expect(
+        () => expect('Time And Relative Dimension in Space').to.include('Dimension')
+      ).to.not.throw()
+    })
 
-    it('should reject objects that are not JSX elements')
+    it('should reject objects that are not JSX elements', () => {
+      expect(
+        () => expect('TARDIS').jsx.to.include(<SonicScrewdriver/>)
+      ).to.throw(AssertionError)
+    })
 
   })
 
