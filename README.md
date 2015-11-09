@@ -14,14 +14,20 @@ the background to turn React elements into formatted strings.
 
 ## Assertions
 
-    expect(ReactComponent|JSX).to.be.an.element
-    expect(ReactComponent|JSX).to.not.be.an.element
+JSX comparison will kick in on deep equality checks, but normal strict equality
+will apply when the 'deep' flag is not used.
+
+    expect(ReactComponent|JSX).to.be.jsx
+    expect(ReactComponent|JSX).to.not.be.jsx
     expect(ReactComponent|JSX).to.deep.equal(ReactComponent|JSX)
     expect(ReactComponent|JSX).to.not.deep.equal(ReactComponent|JSX)
     expect(ReactComponent|JSX).to.eql(ReactComponent|JSX)
     expect(ReactComponent|JSX).to.not.eql(ReactComponent|JSX)
     expect(ReactComponent|JSX).to.include(ReactComponent|JSX)
     expect(ReactComponent|JSX).to.not.include(ReactComponent|JSX)
+
+Note: `include.keys()` calls will look for normal object properties, and will
+not use JSX comparison.
 
 ## Usage
 
@@ -39,16 +45,16 @@ class TestComponent extends React.Component {}
 describe('jsx-chai', () => {
 
   it('works', () => {
-    expect(<div/>).jsx.to.equal(<div/>)
+    expect(<div/>).to.deep.equal(<div/>)
     // ok
 
-    expect(<div a="1" b="2"/>).jsx.to.equal(<div/>)
+    expect(<div a="1" b="2"/>).to.deep.equal(<div/>)
     // Error: Expected '<div\n  a="1"\n  b="2"\n/>' to equal '<div />'
 
-    expect(<span/>).jsx.to.not.equal(<div/>)
+    expect(<span/>).to.not.deep.equal(<div/>)
     // ok
 
-    expect(<div><TestComponent/></div>).jsx.to.include(<TestComponent/>)
+    expect(<div><TestComponent/></div>).to.include(<TestComponent/>)
     // ok
   })
 

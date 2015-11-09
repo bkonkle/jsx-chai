@@ -3,7 +3,7 @@ import reactElementToJSXString from 'react-element-to-jsx-string'
 
 export default function jsxChai({Assertion}, {flag, inspect}) {
 
-  Assertion.addProperty('element', function() {
+  Assertion.addProperty('jsx', function() {
     this.assert(
       isElement(this._obj),
       'expected #{this} to be a JSX element',
@@ -11,19 +11,12 @@ export default function jsxChai({Assertion}, {flag, inspect}) {
     )
   })
 
-  Assertion.addProperty('jsx', function () {
-    flag(this, 'jsx', true);
-  })
-
-  function jsxMethod(func) {
+  function jsxMethod(func, checkDeep) {
     return function(_super) {
       return function(jsx) {
-        if (!flag(this, 'jsx')) {
-          console.log('no jsx flag', jsx)
+        if (!isElement(jsx)) {
           return _super.apply(this, arguments)
         }
-
-        new Assertion(this._obj).to.be.an.element
 
         const expected = reactElementToJSXString(jsx)
         const actual = reactElementToJSXString(this._obj)
@@ -33,7 +26,7 @@ export default function jsxChai({Assertion}, {flag, inspect}) {
     }
   }
 
-  function jsxEqual({expected, actual}) {
+  function jsxEql({expected, actual}) {
     this.assert(
       actual === expected,
       'expected #{act} to equal #{exp}',
@@ -66,9 +59,8 @@ export default function jsxChai({Assertion}, {flag, inspect}) {
     )
   }
 
-  Assertion.overwriteMethod('equals', jsxMethod(jsxEqual))
-  Assertion.overwriteMethod('equal', jsxMethod(jsxEqual))
-  Assertion.overwriteMethod('eq', jsxMethod(jsxEqual))
+  Assertion.overwriteMethod('eql', jsxMethod(jsxEql))
+  Assertion.overwriteMethod('eqls', jsxMethod(jsxEql))
 
   overwriteInclude('include')
   overwriteInclude('contain')

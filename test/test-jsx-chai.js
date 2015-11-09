@@ -8,93 +8,87 @@ class SonicScrewdriver extends React.Component {}
 
 describe('chai-jsx', () => {
 
-  describe('expect().to.be.an.element', () => {
+  describe('expect().to.be.jsx', () => {
 
     it('should not throw an error if the object is a JSX element', () => {
       expect(
-        () => expect(<SonicScrewdriver/>).to.be.an.element
+        () => expect(<SonicScrewdriver/>).to.be.jsx
       ).to.not.throw()
     })
 
     it('should throw an error if the object is not a JSX element', () => {
       expect(
-        () => expect('SonicScrewdriver').to.be.an.element
+        () => expect('SonicScrewdriver').to.be.jsx
       ).to.throw(AssertionError)
     })
 
   })
 
-  describe('expect().to.not.be.an.element', () => {
+  describe('expect().to.not.be.jsx', () => {
 
     it('should throw an error if the object is a JSX element', () => {
       expect(
-        () => expect(<SonicScrewdriver/>).to.not.be.an.element
+        () => expect(<SonicScrewdriver/>).to.not.be.jsx
       ).to.throw(AssertionError)
     })
 
     it('should not throw an error if the object is not a JSX element', () => {
       expect(
-        () => expect('SonicScrewdriver').to.not.be.an.element
+        () => expect('SonicScrewdriver').to.not.be.jsx
       ).to.not.throw()
     })
 
   })
 
-  describe('expect().jsx.to.equal()', () => {
+  describe('expect().to.deep.equal()', () => {
 
     it('should not throw an error if the JSX is equal', () => {
       expect(
-        () => expect(<SonicScrewdriver/>).jsx.to.equal(<SonicScrewdriver/>)
+        () => expect(<SonicScrewdriver/>).to.deep.equal(<SonicScrewdriver/>)
       ).to.not.throw()
     })
 
     it('should throw an error if the JSX is not equal', () => {
       expect(
-        () => expect(<SonicScrewdriver active={true}/>).jsx.to.equal(<SonicScrewdriver/>)
+        () => expect(<SonicScrewdriver active={true}/>).to.deep.equal(<SonicScrewdriver/>)
       ).to.throw(AssertionError)
     })
 
-    it('should allow normal expect().to.equal() calls to work', () => {
+    it('should allow normal expect().to.deep.equal() calls to work', () => {
       expect(
-        () => expect('TARDIS').to.equal('TARDIS')
+        () => expect('TARDIS').to.deep.equal('TARDIS')
       ).to.not.throw()
-    })
-
-    it('should reject objects that are not JSX elements', () => {
-      expect(
-        () => expect('TARDIS').jsx.to.equal(<SonicScrewdriver/>)
-      ).to.throw(AssertionError)
     })
 
   })
 
-  describe('expect().jsx.to.not.equal()', () => {
+  describe('expect().to.not.deep.equal()', () => {
 
     it('should throw an error if the JSX is equal', () => {
       expect(
-        () => expect(<SonicScrewdriver/>).jsx.to.not.equal(<SonicScrewdriver/>)
+        () => expect(<SonicScrewdriver/>).to.not.deep.equal(<SonicScrewdriver/>)
       ).to.throw(AssertionError)
     })
 
     it('should not throw an error if the JSX is not equal', () => {
       expect(
-        () => expect(<SonicScrewdriver active={true}/>).jsx.to.not.equal(<SonicScrewdriver/>)
+        () => expect(<SonicScrewdriver active={true}/>).to.not.deep.equal(<SonicScrewdriver/>)
       ).to.not.throw()
     })
 
   })
 
-  describe('expect().jsx.to.include()', () => {
+  describe('expect().to.include()', () => {
 
     it('should not throw an error if the subject contains the given JSX', () => {
       expect(
-        () => expect(<div><SonicScrewdriver/></div>).jsx.to.include(<SonicScrewdriver/>)
+        () => expect(<div><SonicScrewdriver/></div>).to.include(<SonicScrewdriver/>)
       ).to.not.throw()
     })
 
     it('should throw an error if the subject does not contain the given JSX', () => {
       expect(
-        () => expect(<div><SonicScrewdriver/></div>).jsx.to.include(<SonicScrewdriver active={true}/>)
+        () => expect(<div><SonicScrewdriver/></div>).to.include(<SonicScrewdriver active={true}/>)
       ).to.throw(AssertionError)
     })
 
@@ -111,12 +105,6 @@ describe('chai-jsx', () => {
 
       expect(
         () => expect({test: 'value'}).to.include.keys('otherTest')
-      ).to.throw(AssertionError)
-    })
-
-    it('should reject objects that are not JSX elements', () => {
-      expect(
-        () => expect('TARDIS').jsx.to.include(<SonicScrewdriver/>)
       ).to.throw(AssertionError)
     })
 
