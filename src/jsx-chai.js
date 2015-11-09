@@ -7,7 +7,7 @@ export default function jsxChai({Assertion}, {flag, inspect}) {
     this.assert(
       isElement(this._obj),
       'expected #{this} to be a JSX element',
-      'expected #{this} not to be a JSX element',
+      'expected #{this} not to be a JSX element'
     )
   })
 

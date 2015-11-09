@@ -1,13 +1,4 @@
 {
-  "optional": [
-    "es7.classProperties"
-  ],
-  "loose": [
-    "es6.classes",
-    "es6.destructuring",
-    "es6.forOf",
-    "es6.properties.computed",
-    "es6.spread",
-    "es6.templateLiterals"
-  ]
+  "presets": ["es2015-loose", "react"],
+  "plugins": ["transform-class-properties"]
 }

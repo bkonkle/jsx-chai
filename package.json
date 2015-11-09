@@ -1,15 +1,15 @@
 {
-  "name": "chai-jsx",
-  "version": "0.1.0",
+  "name": "jsx-chai",
+  "version": "1.0.0",
   "description": "JSX assertions for Chai using Algolia's react-element-to-jsx-string",
-  "main": "lib/chai-jsx.js",
+  "main": "lib/jsx-chai.js",
   "scripts": {
     "test": "istanbul cover _mocha",
-    "watch": "babel-node $(which gulp) watch"
+    "build": "babel-node gulp build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ecliptic/chai-jsx.git"
+    "url": "git+https://github.com/bkonkle/jsx-chai.git"
   },
   "keywords": [
     "chai",
@@ -21,9 +21,9 @@
   "author": "Brandon Konkle <brandon@konkle.us>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ecliptic/chai-jsx/issues"
+    "url": "https://github.com/bkonkle/jsx-chai/issues"
   },
-  "homepage": "https://github.com/ecliptic/chai-jsx#readme",
+  "homepage": "https://github.com/bkonkle/jsx-chai#readme",
   "peerDependencies": {
     "chai": "^3.4.0",
     "react": "^0.14.2"
@@ -33,16 +33,20 @@
     "react-element-to-jsx-string": "^2.1.0"
   },
   "devDependencies": {
-    "babel": "^6.0.15",
+    "babel-cli": "^6.1.2",
+    "babel-core": "^6.1.2",
     "babel-eslint": "^4.1.4",
+    "babel-plugin-transform-class-properties": "^6.0.14",
+    "babel-preset-es2015": "^6.1.2",
+    "babel-preset-es2015-loose": "^6.1.2",
+    "babel-preset-react": "^6.1.2",
     "chai": "^3.4.0",
-    "eslint": "^1.8.0",
+    "eslint": "^1.9.0",
     "eslint-config-ecliptic": "^1.2.1",
-    "eslint-plugin-react": "^3.7.0",
+    "eslint-plugin-react": "^3.8.0",
     "gulp": "^3.9.0",
-    "gulp-babel": "^6.0.0",
-    "gulp-spawn-mocha": "^2.2.1",
-    "gulp-util": "^3.0.7",
+    "gulp-babel": "^6.1.0",
+    "gulp-wrap": "^0.11.0",
     "istanbul": "^0.4.0",
     "mocha": "^2.3.3"
   }
