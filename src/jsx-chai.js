@@ -19,6 +19,7 @@ export default function jsxChai({Assertion}, {flag, inspect}) {
     return function(_super) {
       return function(jsx) {
         if (!flag(this, 'jsx')) {
+          console.log('no jsx flag', jsx)
           return _super.apply(this, arguments)
         }
 
@@ -53,29 +54,25 @@ export default function jsxChai({Assertion}, {flag, inspect}) {
     )
   }
 
-  function overwriteGetter(name, func) {
-    const descriptor = Object.getOwnPropertyDescriptor(Assertion.prototype, name)
-    const _super = descriptor.get
-
-    Object.defineProperty(Assertion.prototype, name, {
-      get: function() {
-        return function(value) {
-          return func(_super).call(this, value)
+  function overwriteInclude(name) {
+    Assertion.overwriteChainableMethod(
+      name,
+      jsxMethod(jsxInclude),
+      function(_super) {
+        return function() {
+          return _super.apply(this, arguments)
         }
-      },
-      set: descriptor.set,
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-    })
+      }
+    )
   }
 
   Assertion.overwriteMethod('equals', jsxMethod(jsxEqual))
   Assertion.overwriteMethod('equal', jsxMethod(jsxEqual))
   Assertion.overwriteMethod('eq', jsxMethod(jsxEqual))
 
-  overwriteGetter('include', jsxMethod(jsxInclude))
-  overwriteGetter('contain', jsxMethod(jsxInclude))
-  overwriteGetter('includes', jsxMethod(jsxInclude))
-  overwriteGetter('contains', jsxMethod(jsxInclude))
+  overwriteInclude('include')
+  overwriteInclude('contain')
+  overwriteInclude('includes')
+  overwriteInclude('contains')
 
 }

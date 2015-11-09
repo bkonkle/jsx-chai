@@ -104,6 +104,16 @@ describe('chai-jsx', () => {
       ).to.not.throw()
     })
 
+    it('should allow normal expect().to.include.keys() calls to work', () => {
+      expect(
+        () => expect({test: 'value'}).to.include.keys('test')
+      ).to.not.throw()
+
+      expect(
+        () => expect({test: 'value'}).to.include.keys('otherTest')
+      ).to.throw(AssertionError)
+    })
+
     it('should reject objects that are not JSX elements', () => {
       expect(
         () => expect('TARDIS').jsx.to.include(<SonicScrewdriver/>)

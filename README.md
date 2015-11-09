@@ -16,10 +16,12 @@ the background to turn React elements into formatted strings.
 
     expect(ReactComponent|JSX).to.be.an.element
     expect(ReactComponent|JSX).to.not.be.an.element
-    expect(ReactComponent|JSX).jsx.to.equal(ReactComponent|JSX)
-    expect(ReactComponent|JSX).jsx.to.not.equal(ReactComponent|JSX)
-    expect(ReactComponent|JSX).jsx.to.include(ReactComponent|JSX)
-    expect(ReactComponent|JSX).jsx.to.not.include(ReactComponent|JSX)
+    expect(ReactComponent|JSX).to.deep.equal(ReactComponent|JSX)
+    expect(ReactComponent|JSX).to.not.deep.equal(ReactComponent|JSX)
+    expect(ReactComponent|JSX).to.eql(ReactComponent|JSX)
+    expect(ReactComponent|JSX).to.not.eql(ReactComponent|JSX)
+    expect(ReactComponent|JSX).to.include(ReactComponent|JSX)
+    expect(ReactComponent|JSX).to.not.include(ReactComponent|JSX)
 
 ## Usage
 
