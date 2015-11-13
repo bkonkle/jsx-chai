@@ -15,8 +15,8 @@ and has a few of key differences:
 * The `jsx` flag is not necessary when checking equality. If the value is a JSX
   element and the `deep` flag is enabled (either by using it explicitly, or by
   using `eql` instead of `equal`) then JSX comparison is performed.
-* A browser bundle is included in the *dist* folder.
 * A `to.be.jsx` assertion is included.
+* A browser bundle is included in the *dist* folder.
 
 
 ## Setup
