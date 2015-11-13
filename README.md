@@ -102,6 +102,6 @@ production build or the build without addons.
 [version-svg]: https://img.shields.io/npm/v/jsx-chai.svg?style=flat-square
 [package-url]: https://npmjs.org/package/jsx-chai
 [screenshot]: ./screenshot.png
-[expect-jsx]: https://github.com/algolia/expect-js
+[expect-jsx]: https://github.com/algolia/expect-jsx
 [chai]: http://chaijs.com
 [react-element-to-jsx-string]: https://github.com/algolia/react-element-to-jsx-string
