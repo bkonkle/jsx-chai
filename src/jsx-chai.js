@@ -1,9 +1,9 @@
-import {isElement} from 'react-addons-test-utils';
+import {isElement} from 'react-addons-test-utils'
 import reactElementToJSXString from 'react-element-to-jsx-string'
 
-export default function jsxChai({Assertion}, {flag, inspect}) {
+export default function jsxChai({Assertion}, {inspect}) {
 
-  Assertion.addProperty('jsx', function() {
+  Assertion.addProperty('jsx', function addJsx() {
     this.assert(
       isElement(this._obj),
       'expected #{this} to be a JSX element',
@@ -11,9 +11,9 @@ export default function jsxChai({Assertion}, {flag, inspect}) {
     )
   })
 
-  function jsxMethod(func, checkDeep) {
-    return function(_super) {
-      return function(jsx) {
+  function jsxMethod(func) {
+    return function jsxMethodWrapper(_super) {
+      return function jsxMethodInner(jsx) {
         if (!isElement(jsx)) {
           return _super.apply(this, arguments)
         }
@@ -51,8 +51,8 @@ export default function jsxChai({Assertion}, {flag, inspect}) {
     Assertion.overwriteChainableMethod(
       name,
       jsxMethod(jsxInclude),
-      function(_super) {
-        return function() {
+      function includeWrapper(_super) {
+        return function includeInner() {
           return _super.apply(this, arguments)
         }
       }

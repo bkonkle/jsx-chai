@@ -85,6 +85,13 @@ It looks like this when ran:
 
 It's your responsibility to then unit test those functions.
 
+## A note about the browser bundle
+
+If you're using the browser bundle in *dist* with standard browser globals,
+make sure you are using the un-minified development version of React with
+addons. This library uses React.addons.TestUtils, which is not available in the
+production build or the build without addons.
+
 [travis-svg]: https://img.shields.io/travis/bkonkle/jsx-chai/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/bkonkle/jsx-chai
 [license-image]: http://img.shields.io/badge/license-MIT-green.svg?style=flat-square
