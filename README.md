@@ -10,7 +10,7 @@ the background to turn React elements into formatted strings.
 
 **What's different from chai-jsx?** The *chai-jsx* project was started after
 this one, but it made it to npm faster. This project was renamed to *jsx-chai*,
-and has a few of key differences:
+and has a few key differences:
 
 * The `jsx` flag is not necessary when checking equality. If the value is a JSX
   element and the `deep` flag is enabled (either by using it explicitly, or by
