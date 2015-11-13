@@ -80,8 +80,9 @@ It looks like this when ran:
 
 ## A note about functions
 
-`jsx.to.equal` will not check for function references, it only checks that if a
-`function` was expected somewhere, there's also a function in the actual data.
+`to.deep.equal` and `to.eql` will not check for function references, it only
+checks that if a `function` was expected somewhere, there's also a function in
+the actual data.
 
 It's your responsibility to then unit test those functions.
 
