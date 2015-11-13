@@ -1,6 +1,6 @@
 {
   "name": "jsx-chai",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "JSX assertions for Chai using Algolia's react-element-to-jsx-string",
   "main": "lib/jsx-chai.js",
   "scripts": {

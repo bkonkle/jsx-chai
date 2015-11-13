@@ -28,14 +28,16 @@ and has a few of key differences:
 JSX comparison will kick in on deep equality checks, but normal strict equality
 will apply when the 'deep' flag is not used.
 
-    expect(ReactComponent|JSX).to.be.jsx
-    expect(ReactComponent|JSX).to.not.be.jsx
-    expect(ReactComponent|JSX).to.deep.equal(ReactComponent|JSX)
-    expect(ReactComponent|JSX).to.not.deep.equal(ReactComponent|JSX)
-    expect(ReactComponent|JSX).to.eql(ReactComponent|JSX)
-    expect(ReactComponent|JSX).to.not.eql(ReactComponent|JSX)
-    expect(ReactComponent|JSX).to.include(ReactComponent|JSX)
-    expect(ReactComponent|JSX).to.not.include(ReactComponent|JSX)
+```javascript
+    expect(<Component/>).to.be.jsx
+    expect('Component').to.not.be.jsx
+    expect(<Component/>).to.deep.equal(<Component/>)
+    expect(<Component prop='value'/>).to.not.deep.equal(<Component prop='other-value'/>)
+    expect(<Component/>).to.eql(<Component/>)
+    expect(<Component prop='value'/>).to.not.eql(<Component otherProp='value'/>)
+    expect(<Component><h1>Title</h1></Component>).to.include(<h1>Title</h1>)
+    expect(<Component><h1>Title</h1></Component>).to.not.include(<div/>)
+```
 
 Note: `include.keys()` calls will look for normal object properties, and will
 not use JSX comparison.
