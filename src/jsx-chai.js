@@ -1,6 +1,6 @@
 import {isElement} from 'react-addons-test-utils'
-import reactElementToJSXString from 'react-element-to-jsx-string'
 import collapse from 'collapse-white-space'
+import reactElementToJSXString from 'react-element-to-jsx-string'
 
 export default function jsxChai({Assertion}, {inspect}) {
 
