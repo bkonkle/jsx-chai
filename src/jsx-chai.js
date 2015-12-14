@@ -15,7 +15,7 @@ export default function jsxChai({Assertion}, {inspect}) {
   function jsxMethod(func) {
     return function jsxMethodWrapper(_super) {
       return function jsxMethodInner(jsx) {
-        if (!isElement(jsx)) {
+        if (!isElement(this._obj)) {
           return _super.apply(this, arguments)
         }
 

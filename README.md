@@ -19,7 +19,13 @@ and has a few key differences:
 * A browser bundle is included in the *dist* folder.
 
 
-## Setup
+## Installation
+
+First make sure you have the peerDependencies installed:
+
+    npm install react redux
+
+Then install *jsx-chai*:
 
     npm install jsx-chai --save-dev
 
