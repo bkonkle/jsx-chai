@@ -29,6 +29,7 @@
     "react": "^0.14.2"
   },
   "dependencies": {
+    "collapse-white-space": "^1.0.0",
     "react-addons-test-utils": "^0.14.2",
     "react-element-to-jsx-string": "^2.1.0"
   },

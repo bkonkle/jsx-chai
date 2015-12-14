@@ -108,6 +108,27 @@ describe('chai-jsx', () => {
       ).to.throw(AssertionError)
     })
 
+    it('should not fail for whitespace', () => {
+      const whole = (
+        <div>
+          <span>
+            <a>
+              Foo
+            </a>
+          </span>
+        </div>
+      )
+      const part = (
+        <a>
+          Foo
+        </a>
+      )
+
+      expect(
+        () => expect(whole).to.include(part)
+      ).to.not.throw()
+    })
+
   })
 
   describe('expect().jsx.to.not.include()', () => {
