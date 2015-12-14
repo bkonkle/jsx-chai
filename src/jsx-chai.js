@@ -14,12 +14,13 @@ export default function jsxChai({Assertion}, {inspect}) {
   function jsxMethod(func) {
     return function jsxMethodWrapper(_super) {
       return function jsxMethodInner(jsx) {
-        if (!isElement(jsx)) {
+        const actualObj = this._obj
+        if (!isElement(actualObj)) {
           return _super.apply(this, arguments)
         }
 
         const expected = reactElementToJSXString(jsx)
-        const actual = reactElementToJSXString(this._obj)
+        const actual = reactElementToJSXString(actualObj)
 
         return func.call(this, {jsx, expected, actual})
       }
