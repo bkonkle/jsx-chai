@@ -1,5 +1,6 @@
 import {isElement} from 'react-addons-test-utils'
 import reactElementToJSXString from 'react-element-to-jsx-string'
+import collapse from 'collapse-white-space'
 
 export default function jsxChai({Assertion}, {inspect}) {
 
@@ -18,8 +19,8 @@ export default function jsxChai({Assertion}, {inspect}) {
           return _super.apply(this, arguments)
         }
 
-        const expected = reactElementToJSXString(jsx)
-        const actual = reactElementToJSXString(this._obj)
+        const expected = collapse(reactElementToJSXString(jsx))
+        const actual = collapse(reactElementToJSXString(this._obj))
 
         return func.call(this, {jsx, expected, actual})
       }
