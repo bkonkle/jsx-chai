@@ -14,7 +14,7 @@ describe('chai-jsx', () => {
     it('should not throw an error if the object is a JSX element', () => {
       expect(
         () => expect(<SonicScrewdriver/>).to.be.jsx
-      ).to.not.throw
+      ).to.not.throw()
     })
 
     it('should throw an error if the object is not a JSX element', () => {
@@ -36,7 +36,7 @@ describe('chai-jsx', () => {
     it('should not throw an error if the object is not a JSX element', () => {
       expect(
         () => expect('SonicScrewdriver').to.not.be.jsx
-      ).to.not.throw
+      ).to.not.throw()
     })
 
   })
@@ -46,7 +46,7 @@ describe('chai-jsx', () => {
     it('should not throw an error if the JSX is equal', () => {
       expect(
         () => expect(<SonicScrewdriver/>).to.deep.equal(<SonicScrewdriver/>)
-      ).to.not.throw
+      ).to.not.throw()
     })
 
     it('should throw an error if the JSX is not equal', () => {
@@ -58,7 +58,7 @@ describe('chai-jsx', () => {
     it('should allow normal expect().to.deep.equal() calls to work', () => {
       expect(
         () => expect('TARDIS').to.deep.equal('TARDIS')
-      ).to.not.throw
+      ).to.not.throw()
     })
 
   })
@@ -74,7 +74,7 @@ describe('chai-jsx', () => {
     it('should not throw an error if the JSX is not equal', () => {
       expect(
         () => expect(<SonicScrewdriver active={true}/>).to.not.deep.equal(<SonicScrewdriver/>)
-      ).to.not.throw
+      ).to.not.throw()
     })
 
   })
@@ -84,7 +84,7 @@ describe('chai-jsx', () => {
     it('should not throw an error if the subject contains the given JSX', () => {
       expect(
         () => expect(<div><SonicScrewdriver/></div>).to.include(<SonicScrewdriver/>)
-      ).to.not.throw
+      ).to.not.throw()
     })
 
     it('should throw an error if the subject does not contain the given JSX', () => {
@@ -96,13 +96,13 @@ describe('chai-jsx', () => {
     it('should allow normal expect().to.include() calls to work', () => {
       expect(
         () => expect('Time And Relative Dimension in Space').to.include('Dimension')
-      ).to.not.throw
+      ).to.not.throw()
     })
 
     it('should allow normal expect().to.include.keys() calls to work', () => {
       expect(
         () => expect({test: 'value'}).to.include.keys('test')
-      ).to.not.throw
+      ).to.not.throw()
 
       expect(
         () => expect({test: 'value'}).to.include.keys('otherTest')
@@ -127,7 +127,7 @@ describe('chai-jsx', () => {
 
       expect(
         () => expect(whole).to.include(part)
-      ).to.not.throw
+      ).to.not.throw()
     })
 
     it('uses the underlying JSX object to determine if jsx-chai should be used', () => {
@@ -157,7 +157,7 @@ describe('chai-jsx', () => {
     it('should not throw an error if the subject does not contain the given JSX', () => {
       expect(
         () => expect(<div><SonicScrewdriver/></div>).jsx.to.not.include(<SonicScrewdriver active={true}/>)
-      ).to.not.throw
+      ).to.not.throw()
     })
 
   })
