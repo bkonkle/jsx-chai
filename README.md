@@ -23,7 +23,7 @@ and has a few key differences:
 
 First make sure you have the peerDependencies installed:
 
-    npm install react redux
+    npm install react
 
 Then install *jsx-chai*:
 
