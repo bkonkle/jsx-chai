@@ -26,7 +26,7 @@
   "homepage": "https://github.com/bkonkle/jsx-chai#readme",
   "peerDependencies": {
     "chai": "^3.4.0",
-    "react": "^15.0.1"
+    "react": "^0.14.0 || ^15.0.0-0"
   },
   "dependencies": {
     "collapse-white-space": "^1.0.0",
