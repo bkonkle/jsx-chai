@@ -19,8 +19,8 @@ export default function jsxChai({Assertion}, {inspect}) {
           return _super.apply(this, arguments)
         }
 
-        const expected = collapse(reactElementToJSXString(jsx))
-        const actual = collapse(reactElementToJSXString(this._obj))
+        const expected = reactElementToJSXString(jsx)
+        const actual = reactElementToJSXString(this._obj)
 
         return func.call(this, {jsx, expected, actual})
       }
@@ -29,7 +29,7 @@ export default function jsxChai({Assertion}, {inspect}) {
 
   function jsxEql({expected, actual}) {
     this.assert(
-      actual === expected,
+      collapse(actual) === collapse(expected),
       'expected #{act} to equal #{exp}',
       'expected #{act} to not equal #{exp}',
       expected,
@@ -40,7 +40,7 @@ export default function jsxChai({Assertion}, {inspect}) {
 
   function jsxInclude({expected, actual}) {
     this.assert(
-      ~actual.indexOf(expected),
+      ~collapse(actual).indexOf(collapse(expected)),
       `expected #{act} to contain ${inspect(expected)}`,
       `expected #{act} to not contain ${inspect(expected)}`,
       expected,
