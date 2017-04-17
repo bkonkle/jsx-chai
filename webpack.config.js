@@ -10,11 +10,11 @@ export default {
       commonjs2: 'react',
       amd: 'react',
     },
-    'react-addons-test-utils': {
-      root: 'React.addons.TestUtils',
-      commonjs: 'react-addons-test-utils',
-      commonjs2: 'react-addons-test-utils',
-      amd: 'react-addons-test-utils',
+    'react-dom/test-utils': {
+      root: 'react-dom/test-utils',
+      commonjs: 'react-dom/test-utils',
+      commonjs2: 'react-dom/test-utils',
+      amd: 'react-dom/test-utils',
     },
   },
   module: {

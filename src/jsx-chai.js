@@ -1,4 +1,4 @@
-import {isElement} from 'react-addons-test-utils'
+import {isElement} from 'react-dom/test-utils'
 import collapse from 'collapse-white-space'
 import reactElementToJSXString from 'react-element-to-jsx-string'
 
