@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "collapse-white-space": "^1.0.0",
-    "react-addons-test-utils": "^15.0.1",
     "react-element-to-jsx-string": "^2.5.0"
   },
   "devDependencies": {
@@ -53,6 +52,7 @@
     "istanbul": "^0.4.0",
     "mocha": "^2.3.3",
     "react": "^15.0.1",
+    "react-dom": "^15.5.4",
     "webpack": "^1.12.3"
   }
 }
