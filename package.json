@@ -26,11 +26,12 @@
   "homepage": "https://github.com/bkonkle/jsx-chai#readme",
   "peerDependencies": {
     "chai": "^3.4.0",
-    "react": "^0.14.0 || ^15.0.0-0"
+    "react": "^0.14.0 || ^15.0.0-0 || ^16.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
     "collapse-white-space": "^1.0.0",
-    "react-element-to-jsx-string": "^2.5.0"
+    "react-element-to-jsx-string": "^13.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.1.2",
@@ -51,8 +52,8 @@
     "gulp-sourcemaps": "^1.6.0",
     "istanbul": "^0.4.0",
     "mocha": "^2.3.3",
-    "react": "^15.0.1",
-    "react-dom": "^15.5.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "webpack": "^1.12.3"
   }
 }
