@@ -1,4 +1,4 @@
-# jsx-chai
+# [DEPRECATED] jsx-chai
 
 [![Version][version-svg]][package-url] [![Build Status][travis-svg]][travis-url] [![License][license-image]][license-url] [![Downloads][downloads-image]][downloads-url]
 
